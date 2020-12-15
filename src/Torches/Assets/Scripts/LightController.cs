@@ -25,7 +25,4 @@ public class LightController : MonoBehaviour
     {
         lightLayer.transform.localScale = newScale;
     }
-
-    //array of items allowing it to be lit
-
 }

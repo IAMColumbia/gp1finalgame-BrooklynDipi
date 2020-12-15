@@ -17,7 +17,7 @@ public class Oil : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.name == "Scary Baby")
+        if (col.gameObject.tag == "Player")
         {
             ScoreManager.oilTimeLeft = +oilPowerUp;
             ScoreManager.oilTimerOn = true;

@@ -6,12 +6,12 @@ public class Lock : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.name == "Scary Baby")
+        if (col.gameObject.tag == "Player")
         {
             if(KeyPickup.Keys >= 1)
             {
                 KeyPickup.Keys--;
-                ScoreManager.levelWin = true;
+                ScoreManager.state = gameState.Win;
             }
         }
     }

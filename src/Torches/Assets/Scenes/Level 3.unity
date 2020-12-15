@@ -50100,6 +50100,7 @@ MonoBehaviour:
   timerText: {fileID: 2138319716}
   oilTimer: {fileID: 2138319715}
   keyText: {fileID: 2138319714}
+  statusText: {fileID: 2138319717}
 --- !u!4 &749887843
 Transform:
   m_ObjectHideFlags: 0
@@ -143674,6 +143675,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5943699313884269429, guid: 9b48c28c4627a7f4b89136eaa905a2e0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b48c28c4627a7f4b89136eaa905a2e0, type: 3}
 --- !u!114 &2138319714 stripped
@@ -143703,6 +143709,18 @@ MonoBehaviour:
 --- !u!114 &2138319716 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1171857403991063499, guid: 9b48c28c4627a7f4b89136eaa905a2e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2138319713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2138319717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1643754741781888565, guid: 9b48c28c4627a7f4b89136eaa905a2e0,
     type: 3}
   m_PrefabInstance: {fileID: 2138319713}
   m_PrefabAsset: {fileID: 0}

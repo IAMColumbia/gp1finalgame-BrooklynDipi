@@ -12,16 +12,13 @@ public class LighterFluid : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if(collision.gameObject.name == "Scary Baby")
+        if(col.gameObject.tag == "Player")
         {
             ScoreManager.timeLeft = ScoreManager.timeLeft + lfPowerUp;
             gameObject.SetActive(false);
         }
-
-        //tag for enemy, they get component
-
     }
 
 }

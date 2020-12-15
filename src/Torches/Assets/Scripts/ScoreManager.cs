@@ -3,24 +3,31 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum gameState
+{
+    levelStart,
+    levelProgressing,
+    Loss,
+    Win
+}
+
 public class ScoreManager : MonoBehaviour
 {
     public static float timeLeft;
-    public static float oilTimeLeft;
+
     public Text timerText, oilTimer, keyText, statusText;
 
+    public static float oilTimeLeft;
     public static bool oilTimerOn;
 
-    public static bool levelWin;
-    public static bool levelStarted;
-    public static bool levelLost;
+    public static gameState state;
 
     void Start()
     {
         timeLeft = 90;
         oilTimeLeft = 0;
-        levelWin = false;
-        levelStarted = false;
+
+        state = gameState.levelStart;
 
     }
 
@@ -30,22 +37,29 @@ public class ScoreManager : MonoBehaviour
         timerText.text = "Time Remaining: " + ScoreManager.timeLeft.ToString();
         oilTimer.text = "Oil Burn Remaining: " + ScoreManager.oilTimeLeft.ToString();
 
-        if (!levelStarted)
+        if (state == gameState.levelStart) //Level waiting to start by user action
         {
             statusText.text = "Press 1 to start!";
 
             if (Input.GetKeyDown("1"))
             {
-                levelStarted = true;
+                state = gameState.levelProgressing;
             }
         }
 
-        if (levelStarted && timeLeft > 0)
+        if (state == gameState.levelProgressing && timeLeft > 0) //User playing level 
         {
             statusText.text = "";
             timeLeft -= Time.deltaTime;
         }
 
+        if (timeLeft <= 0)
+        {
+            state = gameState.Loss;
+            timeLeft = 0;
+        }
+
+        //Oil Logic
         if (oilTimerOn)
         {
             oilTimeLeft -= Time.deltaTime;
@@ -57,9 +71,11 @@ public class ScoreManager : MonoBehaviour
             oilTimerOn = false;
         }
 
-        if (levelWin)
+        //Win/Loss Logic
+        if (state == gameState.Win) //If user finds key and puts into lock...
         {
             statusText.text = "You've won! Press 1 to return to level select!";
+
 
             if (Input.GetKeyDown("1"))
             {
@@ -67,7 +83,7 @@ public class ScoreManager : MonoBehaviour
             }
         }
 
-        if (levelLost)
+        if (state == gameState.Loss) //If user doesnt find key for lock in time...
         {
             statusText.text = "You've lost! Press 1 to return to level select!";
 
@@ -77,10 +93,5 @@ public class ScoreManager : MonoBehaviour
             }
         }
 
-        if (timeLeft <= 0)
-        {
-            levelLost = true;
-            timeLeft = 0;
-        }
     }
 }
