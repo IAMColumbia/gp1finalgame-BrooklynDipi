@@ -1,28 +1,20 @@
-# GameProgrammingFinal
-Game Programming Final Template
+# Final Build: Torches
 
-Game Name:  
-Description Short:  
-Description Long:
+Game Name: Torches
 
-Genre:
+Game Description Short: Traverse your way through dungeons with nothing but a torch!
 
-Platform:
+Game Description Long: Traverse through a deep, dark dungeon with only a torch in hand! Find various items to help illuminate the way such as oil and lighter fluid, helping you find the key out of the darkness. Watch your step though, as many leaks and puddles may burn out your torch!
 
-Folder Sturcture
+Credits: 
 
-\src
+•	Art, Design, and Programming – Brooklyn DiPietrantonio
 
-\src\packages
+•	Programming help - Jeff Meyers
 
-\assets
+•	Playtesting – Robby Billings, Zach Wojcik
 
-\docs
+Genre: Puzzler
 
-\build
+Controls: WASD or Arrow Keys, 1 to Start
 
-\build\0.1POC
-
-\build\0.2VS
-
-\build\0.3Final
